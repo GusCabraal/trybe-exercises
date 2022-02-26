@@ -1,0 +1,32 @@
+div:hover{
+    border: 2px solid green;
+}
+
+#primaria{
+    color:red;
+    text-decoration: overline;
+}
+
+#secundaria{
+    color:purple;
+    text-decoration: underline;
+}
+
+#complementar{
+    color: yellow;
+    font-family: fantasy;
+    height: 300px;
+
+}
+#escura {
+    color: rgb(56, 5, 5);
+    font-weight: bold;
+}
+#clara {
+    color: #f5a1a1;
+    font-stretch: expanded;
+
+}
+.impar {
+    font-style: italic;
+}

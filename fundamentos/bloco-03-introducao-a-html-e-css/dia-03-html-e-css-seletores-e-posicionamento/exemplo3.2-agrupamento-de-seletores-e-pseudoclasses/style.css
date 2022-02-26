@@ -4,7 +4,7 @@ div:hover{
 
 #primaria{
     color:red;
-    font-style: italic;
+    text-decoration: overline;
 }
 
 #secundaria{
@@ -16,7 +16,7 @@ div:hover{
     color: yellow;
     font-family: fantasy;
     height: 300px;
-    font-style: italic;
+
 }
 #escura {
     color: rgb(56, 5, 5);
@@ -25,5 +25,8 @@ div:hover{
 #clara {
     color: #f5a1a1;
     font-stretch: expanded;
+
+}
+.impar {
     font-style: italic;
 }

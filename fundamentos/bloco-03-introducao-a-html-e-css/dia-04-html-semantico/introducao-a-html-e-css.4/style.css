@@ -9,11 +9,16 @@
     height: 100px;
     text-align: center;
     padding: 20px;
-    border: 2px solid violet;
+    background-color: aqua;
 }
 
 #navegacao{
     line-height: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 #navegacao a{
@@ -22,39 +27,58 @@
 }
 /*  corpo */
 article {
-    border:1px solid green;
+    border:1px solid black;
+    background-color: rgb(170, 142, 170);
     max-width: 70%;
     display: inline-block;
     margin-left: 50px;
-    padding: 50px;
-    
+    padding: 50px;    
 }
-
-
+#segunda-parte {
+    margin: 30px 0;
+}
+h2, h3 {
+    text-align: center;
+    line-height: 2em;
+}
+.bloco {
+    max-width: 25%;
+    height: 700px;
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+.bloco img {
+    max-width: 220px;
+}
+.bloco p {
+    padding: 10px 20px;
+    line-height: 20px;
+}
+.espaco-imagem{
+    height: 200px;
+    vertical-align: middle;
+    text-align: center;
+}
 #informacoes-gerais {
-    margin: 100px;
-    border: 2px solid green;
+    float: left;
 }
 
 #soco-potente {
-    margin: 100px;
-    border: 2px solid green;
+    margin: 0 11%;
 }
 
 #visao {
-    margin: 100px;
-    border: 2px solid green;
+    float: right;
 }
 
 #referencias {
-    margin: 100px;
-    border: 2px solid green;
+        line-height: 24px;
 }
 
 /*  barra lateral */
 
 aside{
-    border: 2px solid red;
     max-width: 20%;
     float: right;
     display: inline-block;
@@ -66,5 +90,5 @@ aside{
 
 footer {
     padding: 20px 50px;
-    border: 2px solid red;
+    background-color: grey;
 }

@@ -1,5 +1,5 @@
 let salarioBruto = 3000;
-let inss, impRenda,salarioBase;
+let inss, impRenda,salarioBase,aliquotaInss, aliquotaImpRenda, salarioLiquido;
 
 if (salarioBruto <= 1556.94) {
     inss = salarioBruto * 0.08;
@@ -31,4 +31,10 @@ else if (salarioBase <= 4664.68) {
     impRenda = salarioBase * 0.275 - 869.36;
 }
 
-console.log(salarioBase - impRenda)
+salarioLiquido = salarioBase - impRenda;
+
+console.log("O salario bruto é de R$ "+ salarioBruto)
+console.log("A aliquota INSS é de R$ "+ inss)
+console.log("O salário base é de R$ "+ salarioBase)
+console.log("O imposto de renda é de R$ "+ impRenda)
+console.log("o salario liquido é de R$ "+salarioLiquido)

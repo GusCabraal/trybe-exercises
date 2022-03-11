@@ -3,8 +3,8 @@
 let word = 'trybe'
 
 function verificaPalindrome (palavra){
-    for (let i =0; i <= palavra.length; i+= 1){
-        console.log(i)
+    for (let i =0; i < 5 ; i+= 1){
+        console.log(palavra[i])
     }
 }
 

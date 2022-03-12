@@ -1,10 +1,13 @@
-// 4- Um número primo é aquele divisível apenas por 1 e por ele mesmo. Sabendo disso, escreva um algoritmo que retorne o maior número primo entre 0 e 50.
-let linha = [];
-let n = 3;
+// 1- Agora vamos trabalhar com algumas formas geométricas! Faça um programa que, dado um valor n qualquer, seja n > 1 , imprima na tela um quadrado feito de asteriscos de lado de tamanho n . Por exemplo:
+
+let linha = '';
+let n = 5;
 
 for (let j = 0; j < n; j += 1) {
-    linha.push('*')
+    linha += '*'
 }
-for (let i = 0; i < n; i += 1) {   
+
+for (j = 0; j < n; j += 1){
     console.log(linha)
+
 }

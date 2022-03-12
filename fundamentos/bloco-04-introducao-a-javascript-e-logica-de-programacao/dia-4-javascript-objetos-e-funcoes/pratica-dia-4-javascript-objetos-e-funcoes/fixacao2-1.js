@@ -5,5 +5,5 @@ let names = {
   };
 
   for (let position in names) {
-      console.log('Olá ', names[position])
+      console.log('Olá', names[position])
   }

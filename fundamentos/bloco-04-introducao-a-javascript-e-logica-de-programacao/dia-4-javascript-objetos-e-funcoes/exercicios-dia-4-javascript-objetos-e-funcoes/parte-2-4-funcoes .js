@@ -1,7 +1,5 @@
 //4 - Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
 
-let names = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
-
 function largerName(test) {
     let position;
     let result = test[0].length
@@ -11,8 +9,7 @@ function largerName(test) {
             position = i;
         }
     }
-    return names[position];
-
+    return test[position];
 }
 
-console.log(largerName(names))
+console.log(largerName(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']))

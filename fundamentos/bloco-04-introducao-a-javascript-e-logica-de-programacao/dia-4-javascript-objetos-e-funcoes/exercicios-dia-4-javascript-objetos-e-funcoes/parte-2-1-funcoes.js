@@ -1,10 +1,8 @@
 // 1 - Crie uma função que receba uma string e retorne true se for um palíndromo , ou false , se não for.
 
-let word = 'araraa'
-let newWord = '';
-
-function verificaPalindrome(palavra) {
+function verificaPalindrome(word) {
     let isPalindrome = false;
+    let newWord = '';
     newWord = word.split('').reverse().join('')
     if (word === newWord) {
         isPalindrome = true;
@@ -12,4 +10,4 @@ function verificaPalindrome(palavra) {
     return isPalindrome;
 }
 
-verificaPalindrome(word)
+console.log(verificaPalindrome('arara'));

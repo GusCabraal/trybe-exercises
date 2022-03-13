@@ -2,33 +2,23 @@ const num1 = 10;
 const num2 = 5;
 
 function somarNumeros(a, b) {
-    let result;
-    result = a + b;
-    return result;
+    return a + b;
 }
 
 function subNumeros(a, b) {
-    let result;
-    result = a - b;
-    return result;
+    return a - b;
 }
 
 function multNumeros(a, b) {
-    let result;
-    result = a * b;
-    return result;
+    return a * b;
 }
 
 function divNumeros(a, b) {
-    let result;
-    result = a / b;
-    return result;
+    return a / b;
 }
 
 function modNumeros(a, b) {
-    let result;
-    result = a % b;
-    return result;
+    return a % b;
 }
 
 

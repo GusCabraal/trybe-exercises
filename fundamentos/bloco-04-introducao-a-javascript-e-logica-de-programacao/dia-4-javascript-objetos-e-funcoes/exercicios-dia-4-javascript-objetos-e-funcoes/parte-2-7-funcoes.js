@@ -16,5 +16,5 @@ for (let i = 1; i <= splitEnding.length ; i += 1){
 return result;
 }
 
-console.log(verificaEnding('joaofernando','be'))
+console.log(verificaEnding('trybe','be'))
 

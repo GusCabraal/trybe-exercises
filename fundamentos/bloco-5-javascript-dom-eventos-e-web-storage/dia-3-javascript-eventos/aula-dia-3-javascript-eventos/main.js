@@ -23,18 +23,43 @@ function atribuirClasse(elementoDeOrigem) {
   let elementTech = document.querySelector('.tech');
   elementTech.classList.remove('tech');
   elementoDeOrigem.target.classList.add('tech');
-  
+  input.value = ' ';
+
 }
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
+input.addEventListener('keyup', classeInput);
+function classeInput() {
+  input.className = 'tech';
+}
+
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portfólio?
 
+myWebpage.addEventListener('dblclick', function () {
+  // let linkPortfolio = document.createElement('a');
+  // myWebpage.innerText = 'Meu top 3 do Spotrybefy'
+  // linkPortfolio.href = 'https://www.linkedin.com/in/gustavomcabral/'
+  // myWebpage.appendChild(linkPortfolio);
+  window.location.replace('https://www.linkedin.com/in/gustavomcabral/');
+})
+
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+myWebpage.addEventListener('mouseover', function () {
+  myWebpage.style.color = 'orange';
+
+  myWebpage.addEventListener('mouseleave', function () {
+    myWebpage.style.color = 'white';
+  })
+})
+
+
+
+
 
 // Segue abaixo um exemplo do uso de event.target:
 

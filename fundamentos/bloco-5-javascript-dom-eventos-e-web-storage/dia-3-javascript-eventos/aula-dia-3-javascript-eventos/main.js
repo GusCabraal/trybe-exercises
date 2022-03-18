@@ -53,7 +53,7 @@ myWebpage.addEventListener('mouseover', function () {
   myWebpage.style.color = 'orange';
 
   myWebpage.addEventListener('mouseleave', function () {
-    myWebpage.style.color = 'white';
+    myWebpage.style.color = 'unset';
   })
 })
 

@@ -14,20 +14,64 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
-const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-let elementUl = document.getElementById('days');
 
+// Exercicio 1:
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+// function addDAys() {
+let elementUl = document.getElementById('days');
 for (let index = 0; index < dezDaysList.length; index += 1) {
-    
+
     let elementLi = document.createElement('li');
-    elementLi.className = 'day';
-    if (dezDaysList[index] === 24 || dezDaysList[index] === 25 || dezDaysList[index] === 31){
-        elementLi.classList.add = 'holiday' ;
-    } else if (dezDaysList[index] === 4 || dezDaysList[index] === 11 || dezDaysList[index] === 18 || dezDaysList[index] === 25){
-        elementLi.classList.add = 'friday' ;
-    }
-    elementLi.innerText = dezDaysList[index];
+    let element = dezDaysList[index];
+
+    elementLi.innerText = element;
     elementUl.appendChild(elementLi);
+    if (element == 24 || element == 31) {
+        elementLi.className = 'day holiday';
+
+    } else if (element == 4 || element == 11 || element == 18) {
+        elementLi.className = 'day friday';
+    } else if (element == 25) {
+        elementLi.className = 'day friday holiday'
+    } else {
+        elementLi.className = 'day';
+    }
 }
-// console.log(elementUl);
-console.log(elementUl.children[5].classList);
+
+// }
+// addDAys();
+
+// Exercicio 2:
+// function addButton(feriados){
+let divPai = document.querySelector('.buttons-container');
+let btn = document.createElement('button');
+btn.id = 'btn-holiday';
+divPai.appendChild(btn);
+btn.innerText = 'Feriados';
+// }
+// addButton('Feriados')
+
+// Exercicio 3:
+
+btn.addEventListener('click', changeColorHoliday);
+
+function changeColorHoliday() {
+    let liHolidays = document.getElementsByClassName('holiday');
+    for (let i = 0; i < liHolidays.length; i += 1) {
+        if (liHolidays[i].style.background !== 'red') {
+            liHolidays[i].style.background = 'red';
+        } else {
+            liHolidays[i].style.background = 'rgb(238,238,238)';
+        }
+    }
+}
+
+// Exercício 4:
+
+let btnFriday = document.createElement('button');
+divPai.appendChild(btnFriday);
+let friday = 'Sexta-feira';
+btnFriday.innerText = friday;
+btnFriday.id = 'btn-friday';
+
+// Exercício 5:

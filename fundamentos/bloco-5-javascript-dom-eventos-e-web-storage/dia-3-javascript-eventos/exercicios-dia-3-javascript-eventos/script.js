@@ -20,9 +20,9 @@ const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
 function createDaysOfMouth() {
     let days = document.getElementById('days');
     for (let index = 0; index < dezDaysList.length; index += 1) {
-      
+
         let dayElement = dezDaysList[index];
-        let day = document.createElement('li');  
+        let day = document.createElement('li');
 
         if (dayElement === 24 || dayElement === 31) {
             day.innerText = dayElement;
@@ -47,13 +47,13 @@ function createDaysOfMouth() {
 createDaysOfMouth();
 
 // Exercicio 2:
-function createHolidayButton(buttonName){
-let buttonsContainer = document.querySelector('.buttons-container');
-let btn = document.createElement('button');
+function createHolidayButton(buttonName) {
+    let buttonsContainer = document.querySelector('.buttons-container');
+    let btn = document.createElement('button');
 
-btn.id = 'btn-holiday';
-buttonsContainer.appendChild(btn);
-btn.innerText = buttonName;
+    btn.id = 'btn-holiday';
+    buttonsContainer.appendChild(btn);
+    btn.innerText = buttonName;
 }
 createHolidayButton('Feriados');
 
@@ -62,7 +62,7 @@ createHolidayButton('Feriados');
 function changeColorHolidays() {
     let holidays = document.getElementsByClassName('holiday');
     let btn = document.getElementById('btn-holiday');
-    btn.addEventListener('click', function (){
+    btn.addEventListener('click', function () {
 
         for (let i = 0; i < holidays.length; i += 1) {
             if (holidays[i].style.background === 'red') {
@@ -78,98 +78,112 @@ function changeColorHolidays() {
 changeColorHolidays();
 
 // Exercício 4:
-function createFridayButton (buttonName){
-let btnFriday = document.createElement('button');
-btnFriday.innerText = buttonName;
-btnFriday.id = 'btn-friday';
+function createFridayButton(buttonName) {
+    let btnFriday = document.createElement('button');
+    btnFriday.innerText = buttonName;
+    btnFriday.id = 'btn-friday';
 
-let buttonsContainer = document.querySelector('.buttons-container');
-buttonsContainer.appendChild(btnFriday);
+    let buttonsContainer = document.querySelector('.buttons-container');
+    buttonsContainer.appendChild(btnFriday);
 }
 
 createFridayButton('Sexta-Feira');
 
 // Exercício 5:
-function displayFridays(elementSexta){
-let btnFriday = document.getElementById('btn-friday');
-btnFriday.addEventListener('click', function changeFriday() {
-    let fridayDays = document.getElementsByClassName('friday');
-    let friday = 'sexta-feira'
-    for (let i = 0; i < fridayDays.length; i += 1) {
-        if (fridayDays[i].innerText !== friday) {
-            fridayDays[i].innerText = friday;
-        } else {
-            fridayDays[i].innerText = elementSexta[i];
+function displayFridays(elementSexta) {
+    let btnFriday = document.getElementById('btn-friday');
+    btnFriday.addEventListener('click', function changeFriday() {
+        let fridayDays = document.getElementsByClassName('friday');
+        let friday = 'sexta-feira'
+        for (let i = 0; i < fridayDays.length; i += 1) {
+            if (fridayDays[i].innerText !== friday) {
+                fridayDays[i].innerText = friday;
+            } else {
+                fridayDays[i].innerText = elementSexta[i];
+            }
         }
-    }
-})
+    })
 }
-let arrayFriday = [4,11,18,25];
+let arrayFriday = [4, 11, 18, 25];
 displayFridays(arrayFriday);
 
 // Exercicio 6:
-function zoomIn (){
-let days  = document.getElementById('days');
-days.addEventListener('mouseover', function(event){
-event.target.style.fontSize = '30px';
-event.target.style.fontWeight = '600';    
+function zoomIn() {
+    let days = document.getElementById('days');
+    days.addEventListener('mouseover', function (event) {
+        event.target.style.fontSize = '30px';
+        event.target.style.fontWeight = '600';
 
-})
+    })
 }
 
-function zoomOut (){
-let days  = document.getElementById('days');
-days.addEventListener('mouseout', function(event){
-    event.target.style.fontSize = '20px';
-    event.target.style.fontWeight = '200';      
-})
+function zoomOut() {
+    let days = document.getElementById('days');
+    days.addEventListener('mouseout', function (event) {
+        event.target.style.fontSize = '20px';
+        event.target.style.fontWeight = '200';
+    })
 }
 zoomIn();
 zoomOut();
 
 // Exercício 7:
-function newTaskSpan (task){
-let divMyTasks = document.querySelector('.my-tasks');
-let myTasks = document.createElement('span');
+function newTaskSpan(task) {
+    let divMyTasks = document.querySelector('.my-tasks');
+    let myTasks = document.createElement('span');
 
-myTasks.innerText = task;
-divMyTasks.appendChild(myTasks);
+    myTasks.innerText = task;
+    divMyTasks.appendChild(myTasks);
 }
 newTaskSpan('Cozinhar');
 
 // Exercício 8:
-function newTaskColor(colorTask){
-    
+function newTaskColor(colorTask) {
+
     let taskLegend = document.createElement('div');
     taskLegend.classList = 'task';
     taskLegend.style.background = colorTask;
 
     let myTasks = document.querySelector('.my-tasks');
     myTasks.appendChild(taskLegend);
+    return taskLegend;
 
 }
-newTaskColor('blue');
-// newTaskColor('red');
+// newTaskColor('blue');
 // newTaskColor('orange');
-// let elemento = newTaskColor('blue');
+// newTaskColor('red');
 
-// // Exercício 9:
-// newTaskColor('blue').addEventListener('click', function selecionarDiv(event){
-//     let elemento = event.target;
-//     if (elemento.className.includes('selected')){
-//         elemento.className = 'task';
-//         console.log('nao selecionado');
-//     }else {
-//         elemento.className = 'task selected';
-//         console.log('selecionado')
-//     }
-//     return elemento;
-// })
+// Exercício 9:
+function changeClassTask(colorTask) {
+    colorTask.addEventListener('click', function selecionarDiv(event) {
+        let elemento = event.target;
+        if (event.target.className.includes('selected')) {
+            event.target.className = 'task';
+            // console.log(document.querySelector('.task'))
+        } else {
+            event.target.className = 'task selected';
+            // console.log(document.querySelector('.task.selected'))
+        }
+    })
+}
+changeClassTask(newTaskColor('blue'));
+changeClassTask(newTaskColor('orange'));
+changeClassTask(newTaskColor('red'));
 
-// selecionarDiv();
-// let corSelecionada = querySelector('.task')
+// Exercício 10;
+function changeColorDay() {
+    let days = document.getElementById('days');
+    let colorTask = document.querySelector('.task');
+    colorTask.className = 'task selected'
+    days.addEventListener('click', function (event) {
+        let newColorDay = document.querySelector('.task.selected');
+        if (event.target.style.background !== 'rgb(119,119,119)') {
+            event.target.style.color = newColorDay.style.background;
+        } else {
+            event.target.style.color = 'rgb(119,119,119)'
+        }
+    })
+}
+changeColorDay();
 
-// elementUl.addEventListener('click', function(event){
-//     event.target.style.background = corSelecionada.style.background;
-// })
 

@@ -17,61 +17,157 @@ createDaysOfTheWeek();
 
 // Exercicio 1:
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-// function addDAys() {
-let elementUl = document.getElementById('days');
-for (let index = 0; index < dezDaysList.length; index += 1) {
+function createDaysOfMouth() {
+    let days = document.getElementById('days');
+    for (let index = 0; index < dezDaysList.length; index += 1) {
+      
+        let dayElement = dezDaysList[index];
+        let day = document.createElement('li');  
 
-    let elementLi = document.createElement('li');
-    let element = dezDaysList[index];
-
-    elementLi.innerText = element;
-    elementUl.appendChild(elementLi);
-    if (element == 24 || element == 31) {
-        elementLi.className = 'day holiday';
-
-    } else if (element == 4 || element == 11 || element == 18) {
-        elementLi.className = 'day friday';
-    } else if (element == 25) {
-        elementLi.className = 'day friday holiday'
-    } else {
-        elementLi.className = 'day';
+        if (dayElement === 24 || dayElement === 31) {
+            day.innerText = dayElement;
+            days.appendChild(day);
+            day.className = 'day holiday';
+        } else if (dayElement === 4 || dayElement === 11 || dayElement === 18) {
+            day.innerText = dayElement;
+            days.appendChild(day);
+            day.className = 'day friday';
+        } else if (dayElement === 25) {
+            day.innerText = dayElement;
+            days.appendChild(day);
+            day.className = 'day friday holiday'
+        } else {
+            day.innerText = dayElement;
+            days.appendChild(day);
+            day.className = 'day';
+        }
     }
-}
 
-// }
-// addDAys();
+}
+createDaysOfMouth();
 
 // Exercicio 2:
-// function addButton(feriados){
-let divPai = document.querySelector('.buttons-container');
+function createHolidayButton(buttonName){
+let buttonsContainer = document.querySelector('.buttons-container');
 let btn = document.createElement('button');
+
 btn.id = 'btn-holiday';
-divPai.appendChild(btn);
-btn.innerText = 'Feriados';
-// }
-// addButton('Feriados')
+buttonsContainer.appendChild(btn);
+btn.innerText = buttonName;
+}
+createHolidayButton('Feriados');
 
 // Exercicio 3:
 
-btn.addEventListener('click', changeColorHoliday);
+function changeColorHolidays() {
+    let holidays = document.getElementsByClassName('holiday');
+    let btn = document.getElementById('btn-holiday');
+    btn.addEventListener('click', function (){
 
-function changeColorHoliday() {
-    let liHolidays = document.getElementsByClassName('holiday');
-    for (let i = 0; i < liHolidays.length; i += 1) {
-        if (liHolidays[i].style.background !== 'red') {
-            liHolidays[i].style.background = 'red';
-        } else {
-            liHolidays[i].style.background = 'rgb(238,238,238)';
+        for (let i = 0; i < holidays.length; i += 1) {
+            if (holidays[i].style.background === 'red') {
+                holidays[i].style.background = 'rgb(238,238,238)';
+            } else {
+                holidays[i].style.background = 'red';
+            }
+            // console.log(holidays[i]);
         }
-    }
+    })
 }
 
-// Exercício 4:
+changeColorHolidays();
 
+// Exercício 4:
+function createFridayButton (buttonName){
 let btnFriday = document.createElement('button');
-divPai.appendChild(btnFriday);
-let friday = 'Sexta-feira';
-btnFriday.innerText = friday;
+btnFriday.innerText = buttonName;
 btnFriday.id = 'btn-friday';
 
-// Exercício 5:
+let buttonsContainer = document.querySelector('.buttons-container');
+buttonsContainer.appendChild(btnFriday);
+}
+
+createFridayButton('Sexta-Feira');
+
+// // Exercício 5:
+// let elementSexta = [4,11,18,25];
+
+// btnFriday.addEventListener('click', function changeFriday() {
+//     let elementFriday = document.getElementsByClassName('friday');
+//     for (let i = 0; i < elementFriday.length; i += 1) {
+//         if (elementFriday[i].innerText !== friday) {
+//             elementFriday[i].innerText = friday;
+//         } else {
+//             elementFriday[i].innerText = elementSexta[i];
+//         }
+//     }
+// })
+
+// // Exercicio 6:
+
+// elementUl.addEventListener('mouseover', function(event){
+// event.target.style.fontSize = '30px';
+// event.target.style.fontWeight = '600';    
+
+// })
+
+// elementUl.addEventListener('mouseout', function(event){
+//     event.target.style.fontSize = '20px';
+//     event.target.style.fontWeight = '200';      
+// })
+
+
+// // Exercício 7:
+// let divMyTasks = document.querySelector('.my-tasks');
+
+// function newTaskSpan (tarefa){
+// let myTasks = document.createElement('span');
+
+// myTasks.innerText = tarefa;
+// divMyTasks.appendChild(myTasks);
+// return myTasks;
+// }
+// newTaskSpan('Projeto:');
+// newTaskSpan('Trabalho:');
+// newTaskSpan('Tarefa:');
+
+// // Exercício 8:
+
+// function newTaskColor(colorTask){
+    
+//     let taskLegend = document.createElement('div');
+//     taskLegend.classList = 'task';
+
+//     taskLegend.style.background = colorTask;
+//     // taskColor.style.width = '600px';
+//     // taskColor.style.borderRadius = '0'
+//     divMyTasks.appendChild(taskLegend);
+//     // taskColor.appendChild(newTaskSpan('Projeto:'))
+//     return taskLegend;
+
+// }
+// // newTaskColor('blue');
+// // newTaskColor('red');
+// // newTaskColor('orange');
+// // let elemento = newTaskColor('blue');
+
+// // Exercício 9:
+// newTaskColor('blue').addEventListener('click', function selecionarDiv(event){
+//     let elemento = event.target;
+//     if (elemento.className.includes('selected')){
+//         elemento.className = 'task';
+//         console.log('nao selecionado');
+//     }else {
+//         elemento.className = 'task selected';
+//         console.log('selecionado')
+//     }
+//     return elemento;
+// })
+
+// selecionarDiv();
+// let corSelecionada = querySelector('.task')
+
+// elementUl.addEventListener('click', function(event){
+//     event.target.style.background = corSelecionada.style.background;
+// })
+

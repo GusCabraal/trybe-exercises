@@ -90,7 +90,7 @@ buttonsContainer.appendChild(btnFriday);
 createFridayButton('Sexta-Feira');
 
 // Exercício 5:
-let elementSexta = [4,11,18,25];
+function displayFridays(elementSexta){
 let btnFriday = document.getElementById('btn-friday');
 btnFriday.addEventListener('click', function changeFriday() {
     let fridayDays = document.getElementsByClassName('friday');
@@ -103,19 +103,29 @@ btnFriday.addEventListener('click', function changeFriday() {
         }
     }
 })
+}
+let arrayFriday = [4,11,18,25];
+displayFridays(arrayFriday);
 
-// // Exercicio 6:
+// Exercicio 6:
+function zoomIn (){
+let days  = document.getElementById('days');
+days.addEventListener('mouseover', function(event){
+event.target.style.fontSize = '30px';
+event.target.style.fontWeight = '600';    
 
-// elementUl.addEventListener('mouseover', function(event){
-// event.target.style.fontSize = '30px';
-// event.target.style.fontWeight = '600';    
+})
+}
 
-// })
-
-// elementUl.addEventListener('mouseout', function(event){
-//     event.target.style.fontSize = '20px';
-//     event.target.style.fontWeight = '200';      
-// })
+function zoomOut (){
+let days  = document.getElementById('days');
+days.addEventListener('mouseout', function(event){
+    event.target.style.fontSize = '20px';
+    event.target.style.fontWeight = '200';      
+})
+}
+zoomIn();
+zoomOut();
 
 
 // // Exercício 7:

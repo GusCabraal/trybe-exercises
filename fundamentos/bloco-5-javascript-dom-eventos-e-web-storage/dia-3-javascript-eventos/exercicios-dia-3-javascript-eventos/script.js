@@ -89,19 +89,20 @@ buttonsContainer.appendChild(btnFriday);
 
 createFridayButton('Sexta-Feira');
 
-// // Exercício 5:
-// let elementSexta = [4,11,18,25];
-
-// btnFriday.addEventListener('click', function changeFriday() {
-//     let elementFriday = document.getElementsByClassName('friday');
-//     for (let i = 0; i < elementFriday.length; i += 1) {
-//         if (elementFriday[i].innerText !== friday) {
-//             elementFriday[i].innerText = friday;
-//         } else {
-//             elementFriday[i].innerText = elementSexta[i];
-//         }
-//     }
-// })
+// Exercício 5:
+let elementSexta = [4,11,18,25];
+let btnFriday = document.getElementById('btn-friday');
+btnFriday.addEventListener('click', function changeFriday() {
+    let fridayDays = document.getElementsByClassName('friday');
+    let friday = 'sexta-feira'
+    for (let i = 0; i < fridayDays.length; i += 1) {
+        if (fridayDays[i].innerText !== friday) {
+            fridayDays[i].innerText = friday;
+        } else {
+            fridayDays[i].innerText = elementSexta[i];
+        }
+    }
+})
 
 // // Exercicio 6:
 

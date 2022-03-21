@@ -127,40 +127,31 @@ days.addEventListener('mouseout', function(event){
 zoomIn();
 zoomOut();
 
+// Exercício 7:
+function newTaskSpan (task){
+let divMyTasks = document.querySelector('.my-tasks');
+let myTasks = document.createElement('span');
 
-// // Exercício 7:
-// let divMyTasks = document.querySelector('.my-tasks');
+myTasks.innerText = task;
+divMyTasks.appendChild(myTasks);
+}
+newTaskSpan('Cozinhar');
 
-// function newTaskSpan (tarefa){
-// let myTasks = document.createElement('span');
-
-// myTasks.innerText = tarefa;
-// divMyTasks.appendChild(myTasks);
-// return myTasks;
-// }
-// newTaskSpan('Projeto:');
-// newTaskSpan('Trabalho:');
-// newTaskSpan('Tarefa:');
-
-// // Exercício 8:
-
-// function newTaskColor(colorTask){
+// Exercício 8:
+function newTaskColor(colorTask){
     
-//     let taskLegend = document.createElement('div');
-//     taskLegend.classList = 'task';
+    let taskLegend = document.createElement('div');
+    taskLegend.classList = 'task';
+    taskLegend.style.background = colorTask;
 
-//     taskLegend.style.background = colorTask;
-//     // taskColor.style.width = '600px';
-//     // taskColor.style.borderRadius = '0'
-//     divMyTasks.appendChild(taskLegend);
-//     // taskColor.appendChild(newTaskSpan('Projeto:'))
-//     return taskLegend;
+    let myTasks = document.querySelector('.my-tasks');
+    myTasks.appendChild(taskLegend);
 
-// }
-// // newTaskColor('blue');
-// // newTaskColor('red');
-// // newTaskColor('orange');
-// // let elemento = newTaskColor('blue');
+}
+newTaskColor('blue');
+// newTaskColor('red');
+// newTaskColor('orange');
+// let elemento = newTaskColor('blue');
 
 // // Exercício 9:
 // newTaskColor('blue').addEventListener('click', function selecionarDiv(event){

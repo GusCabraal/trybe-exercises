@@ -18,11 +18,32 @@
 .section-text {
   display: flex;
   justify-content: center;
+  line-height: 1.5;
 }
 .gallery-img {
   width: 150px;
 }
 
+.technologies {
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  background: rgb(179, 173, 173);
+  margin: 5px;
+  border-radius: 20px;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+}
+
+#section-container {
+  display: flex;
+  width: 700px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .social-img {
   width: 25px;
   margin-left: 10px;

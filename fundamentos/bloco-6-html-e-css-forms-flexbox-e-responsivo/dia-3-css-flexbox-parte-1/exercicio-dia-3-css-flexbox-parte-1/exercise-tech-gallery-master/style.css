@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-around;
   background: rgb(56, 53, 53);
+  color: white;
 }
 
 .header-img {
@@ -31,6 +32,7 @@
   background: rgb(179, 173, 173);
   margin: 5px;
   border-radius: 20px;
+  border: 2px solid grey;
 }
 
 #main-container {
@@ -42,6 +44,19 @@
   display: flex;
   width: 700px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+#footer-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.img-container {
+  width: 200px;
+  border-top: 2px solid grey;
+  padding: 10px 3px;
+  display: flex;
   justify-content: center;
 }
 .social-img {

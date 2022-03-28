@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bibliotecas/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script src="../bibliotecas/jquery-3.6.0.min.js"></script>
+    <script src="../bibliotecas/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <title>Olha que coisa bonita</title>
+</head>
+
+<body>
+    <header class="p-3 mb-2 bg-success text-white text-center mb-3" id="title">
+        <h1 class = "h1">Concorra à Viagem dos seus sonhos com a TrybeTrip</h1>
+    </header>
+    <main>
+        <section id="body-page" class="container">
+            <form action="" method="GET">
+                <!--  -->
+                <div class="mb-3">
+                    <label class="form-label" for="nome">Nome: </label>
+                    <input class="form-control" type="text" id="nome" name="nome" minlength="10" maxlength="40"
+                        placeholder="João da Silva" required>
+                    <span id="passwordHelpInline" class="form-text">
+                        Deve ter entre 10 e 40 caracteres.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="e-mail">Email: </label>
+                    <input class="form-control" type="email" id="e-mail" name="e-mail" minlength="10" maxlength="50"
+                        placeholder="name@example.com" required>
+                    <span id="passwordHelpInline" class="form-text">
+                        Deve ter entre 10 e 50 caracteres.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-check-label" for="destino1">
+                        <input class="form-check-input" type="radio" name="destino" id="destino1" value="city"> Cidade
+                    </label>
+                    <label class="form-check-label" for="destino2">
+                        <input class="form-check-input" type="radio" name="destino" id="destino2" value="field"> Campo
+                    </label>
+                    <label class="form-check-label" for="destino3">
+                        <input class="form-check-input" type="radio" name="destino" id="destino3" value="beach"> Praia
+                    </label>
+                    <label class="form-check-label" for="destino4">
+                        <input class="form-check-input" type="radio" name="destino" id="destino4" value="mountain">
+                        Montanhas
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <br>
+                    <label for="descricao" class="form-label">Por que você deveria ser a pessoa desenvolvedora a ganhar
+                        o concurso</label>
+                    TrybeTrip?
+                    <br>
+                    <textarea name="" class="form-control" id="descricao" rows="3" maxlength="500"
+                        placeholder="Digite sua resposta vencedora aqui"></textarea>
+                    <span id="passwordHelpInline" class="form-text">
+                        Deve ter até 500 caracteres.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <br>
+                    <label for="travel-date"></label>Qual a melhor data para realizar sua viagem?
+                    <br>
+                    <input type="date" id="travel-date" name="data">
+                </div>
+                <div class="mb-3">
+                    <label for="agree1" class="form-check-label">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+                        <input class="form-check-input" type="checkbox" name="agree1" id="agree1">
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <label for="agree2" class="form-check-label">Concordo que imagens das minhas férias poderão ser usadas na divulgação de
+                        concursos
+                        futuros.
+                        <input class="form-check-input" type="checkbox" name="agree2" id="agree2" required>
+                    </label>
+                </div>
+                <br>
+                <!-- Botões -->
+                <button type="submit"class="btn btn-success" id="submit-button" disabled>Participar do concurso TrybeTrip</button>
+                <button id="clean-button" class="btn btn-danger" type="reset">Apagar informações</button>
+                <div class="p-3"></div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

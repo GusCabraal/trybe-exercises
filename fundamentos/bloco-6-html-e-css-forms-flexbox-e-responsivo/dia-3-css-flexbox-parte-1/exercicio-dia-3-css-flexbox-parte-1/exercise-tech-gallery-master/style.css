@@ -4,6 +4,12 @@
   box-sizing: border-box;
   font-family: 'Ubuntu';
 }
+.header-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgb(56, 53, 53);
+}
 
 .header-img {
   width: 70px;

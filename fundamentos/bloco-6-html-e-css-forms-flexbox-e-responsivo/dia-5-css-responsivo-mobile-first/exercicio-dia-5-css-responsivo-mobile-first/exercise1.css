@@ -51,7 +51,7 @@
   @media screen and (min-width: 500px){
       body {
           background-color: red;
-          font-size: smaller;
+          font-size: xx-large;
           margin: 50px;
       }
       .images-container {
@@ -62,6 +62,14 @@
           border: 2px solid green;
           display: flex;
           justify-content: space-around;
+      }   
+  }
+
+  @media screen and (min-width: 1000px){
+      body{
+          background-color: blue;
+          font-size: xxx-large;
+          margin: 100px;
+          max-width: 1500px;
       }
-      
   }

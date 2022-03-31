@@ -1,0 +1,64 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.container {
+    width: 95%;
+    margin: 0 auto;
+    border: solid;
+}
+header {
+  border: solid;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+}
+
+header p {
+  text-align: center;
+  font: 1.2em "Helvetica";
+  font-weight: 600;
+}
+nav ul {
+  display: none;
+}
+
+.main-content {
+    margin: 20px 50px;
+}
+
+/* tela média */
+
+@media screen and (min-width: 601px) {
+    .container {
+    background-color: blue;
+  }
+  .container {
+      width: 85%;
+  }
+  header {
+      justify-content: space-around;
+  }
+  nav ul {
+      display: flex;
+      justify-content: space-around;
+      flex: 1;
+      list-style-type : none;
+      border: solid;
+  }
+}
+
+/* tela maior */
+
+@media screen and (min-width: 1000px){
+  .container {
+    background-color: red
+  }
+}

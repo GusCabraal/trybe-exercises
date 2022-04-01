@@ -1,0 +1,1 @@
+### Exercicios do bloco 7 - introducao à JavaScript ES6 e Testes unitários.

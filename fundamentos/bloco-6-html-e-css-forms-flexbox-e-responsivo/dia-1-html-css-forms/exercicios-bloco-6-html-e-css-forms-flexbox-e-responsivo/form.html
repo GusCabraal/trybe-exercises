@@ -16,13 +16,16 @@
     <main>
         <section id="body-page">
             <form action="" method="GET">
-                <!--  -->
-                <label for="nome">Nome: </label>
-                <input type="text" id="nome" name="nome" minlength="10" maxlength="40" required>
-                <br>
-                <label for="e-mail">Email: </label>
-                <input type="email" id="e-mail" name="e-mail" minlength="10" maxlength="50" required>
-                <br>
+                <fieldset>
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="nome" name="nome" minlength="10" maxlength="40" required>
+                    <br>
+                </fieldset>
+                <fieldset>
+                    <label for="e-mail">Email: </label>
+                    <input type="email" id="e-mail" name="e-mail" minlength="10" maxlength="50" required>
+                    <br>
+                </fieldset>
                 <label for="destino1"><input type="radio" name="destino" id="destino1" value="city">Cidade</label>
                 <label for="destino2"> <input type="radio" name="destino" id="destino2" value="field">Campo</label>
                 <label for="destino3"><input type="radio" name="destino" id="destino3" value="beach">Praia</label>
@@ -32,7 +35,8 @@
                 <label for="descricao">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso</label>
                 TrybeTrip?
                 <br>
-                <textarea name="" id="descricao" cols="40" rows="15" maxlength="500" placeholder="Digite sua resposta vencedora aqui"></textarea>
+                <textarea name="" id="descricao" cols="40" rows="15" maxlength="500"
+                    placeholder="Digite sua resposta vencedora aqui"></textarea>
                 <br>
                 <label for="travel-date"></label>Qual a melhor data para realizar sua viagem?
                 <input type="date" id="travel-date" name="data">
@@ -44,11 +48,12 @@
                     futuros.<input type="checkbox" name="agree2" id="agree2" required></label>
                 <br>
                 <!-- Botões -->
-                <button type="submit" id="submit-button" disabled >Participar do concurso TrybeTrip</button>
+                <button type="submit" id="submit-button" disabled>Participar do concurso TrybeTrip</button>
                 <button id="clean-button">Apagar informações</button>
             </form>
         </section>
     </main>
 </body>
 <script src="script.js"></script>
+
 </html>

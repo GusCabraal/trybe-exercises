@@ -6,3 +6,7 @@ const fatorial = numero => {
     return mult;
 }
 console.log(fatorial(4));
+
+// forma recursiva
+const factorial = number => number > 1 ? number * factorial(number - 1) : 1;
+console.log(factorial(4));

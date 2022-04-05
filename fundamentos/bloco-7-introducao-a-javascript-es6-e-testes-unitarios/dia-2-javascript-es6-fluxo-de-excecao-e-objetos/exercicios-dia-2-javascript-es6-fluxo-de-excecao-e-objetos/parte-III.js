@@ -89,3 +89,7 @@ console.log(verifyPair(lesson3, 'turno', 'noite'));
 // Output: true,
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
+
+// array como objeto com ordenação aleatória por chave
+let an_obj = { 100: 'a', 2: 'b', 7: 'c' };
+console.log(Object.keys(an_obj)); // console: ['2', '7', '100']

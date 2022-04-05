@@ -17,32 +17,32 @@ const lesson3 = {
   professor: "Maria Clara",
   turno: "noite",
 };
-// // 1. Crie uma função para adicionar o turno da noite na lesson2 . Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
-// const novoObjeto = (objeto, propriedade, valor) => {
-//   objeto[propriedade] = valor;
-// };
-// novoObjeto(lesson2, "turno", "noite");
-// console.log(lesson2);
+// 1. Crie uma função para adicionar o turno da noite na lesson2 . Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
+const novoObjeto = (objeto, propriedade, valor) => {
+  objeto[propriedade] = valor;
+};
+novoObjeto(lesson2, "turno", "noite");
+console.log(lesson2);
 
-// // 2. Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
+// 2. Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
 
-// const listarKeys = obj => {
-//     console.log(Object.keys(obj))
-// }
-// listarKeys(lesson1);
+const listarKeys = obj => {
+    console.log(Object.keys(obj))
+}
+listarKeys(lesson1);
 
-// // 3. Crie uma função para mostrar o tamanho de um objeto.
+// 3. Crie uma função para mostrar o tamanho de um objeto.
 
-// const tamanhoObj = obj => {
-//   console.log(Object.keys(obj).length)
-// }
-// tamanhoObj(lesson1);
+const tamanhoObj = obj => {
+  console.log(Object.keys(obj).length)
+}
+tamanhoObj(lesson1);
 
-// // 4. Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
-// const listarValues = obj => {
-//   console.log(Object.values(obj))
-// }
-// listarValues(lesson2);
+// 4. Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
+const listarValues = obj => {
+  console.log(Object.values(obj))
+}
+listarValues(lesson2);
 
 // 5. Crie um objeto de nome allLessons , que deve agrupar todas as aulas através do Object.assign . Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1 , lesson2 e lesson3 . Ao executar o comando console.log(allLessons) , a saída deverá ser a seguinte:
 
@@ -62,3 +62,30 @@ const alunos = (obj) => {
 alunos(allLessons);
 
 // 7. Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
+const getValueByNumber = (obj, position) => {
+  return Object.values(obj)[position];
+}
+
+console.log(getValueByNumber(lesson1, 0));
+// Output: 'Matématica'
+
+// 8. Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. Exemplo:
+const verifyPair = (objeto, propriedade, valor) => {
+  const chaves = Object.keys(objeto);
+  const valores = Object.values(objeto);
+  let result = true;
+  for (let i =0; i < chaves.length; i +=1) {
+    if (chaves[i] === propriedade && valores[i] === valor) {
+      result = true;
+      return result;
+    } else{
+      result = false;
+    }
+  }
+  return result;
+};
+
+console.log(verifyPair(lesson3, 'turno', 'noite'));
+// Output: true,
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+// Output: false

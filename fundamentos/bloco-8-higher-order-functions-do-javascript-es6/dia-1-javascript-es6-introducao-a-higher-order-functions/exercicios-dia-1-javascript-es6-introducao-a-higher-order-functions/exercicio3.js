@@ -7,7 +7,7 @@ const correcao = (gabarito, prova) => {
         if (prova[i] === gabarito[i]){
             notaFinal += 1;
         } else if (prova[i] === 'N.A'){
-
+            notaFinal += 0;
         } else {
             notaFinal -= 0.5;
         }
@@ -15,10 +15,6 @@ const correcao = (gabarito, prova) => {
     return notaFinal;
 }
 
-correcao(RIGHT_ANSWERS, STUDENT_ANSWERS)
-
-const imprimeNotaFinal = (gab, prova, corrigir) => {
-    return corrigir(gab, prova);
-}
+const imprimeNotaFinal = (gab, prova, corrigir) => corrigir(gab, prova);
 
 console.log(`A nota final do estudante foi ${imprimeNotaFinal(RIGHT_ANSWERS, STUDENT_ANSWERS, correcao)}`);

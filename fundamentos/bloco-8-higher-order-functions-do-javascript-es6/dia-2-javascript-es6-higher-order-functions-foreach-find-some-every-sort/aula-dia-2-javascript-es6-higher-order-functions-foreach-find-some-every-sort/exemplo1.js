@@ -1,7 +1,5 @@
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const numbers = [11, 24, 39, 47, 50, 62, 75, 81, 96, 100];
+const firstMultipleOf5 = numbers.find((number) => number % 5 === 0);
 
-const multipliesFor2 = (element) => {
-  console.log(`${element} * 2: ${element * 2}`);
-};
-
-numbers.forEach(multipliesFor2);
+console.log(firstMultipleOf5);
+// 50

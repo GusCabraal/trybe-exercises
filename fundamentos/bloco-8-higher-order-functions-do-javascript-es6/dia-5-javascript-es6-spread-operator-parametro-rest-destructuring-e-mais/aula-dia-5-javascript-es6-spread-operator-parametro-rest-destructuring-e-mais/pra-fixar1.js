@@ -10,3 +10,15 @@ const fruitSalad = (fruit, additional) => {
 };
 
 console.log(fruitSalad(specialFruit, additionalItens));
+
+
+const daysOfWeek = {
+  workDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  weekend: ['Saturday', 'Sunday'],
+};
+
+const {workDays, weekend} =  daysOfWeek;
+
+const week = [...workDays, ...weekend];
+
+console.log(week);

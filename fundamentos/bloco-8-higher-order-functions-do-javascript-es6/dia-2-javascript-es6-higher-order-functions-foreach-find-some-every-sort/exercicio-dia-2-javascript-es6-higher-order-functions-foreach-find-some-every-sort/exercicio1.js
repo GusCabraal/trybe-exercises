@@ -66,51 +66,46 @@ const books = [
 //   1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
 // Dica: use a função find .
 function authorBornIn1947() {
-    return books.find((book) => book.author.birthYear === 1947)
+    return books.find(({author: { birthYear }}) => birthYear === 1947)
   // escreva aqui o seu código
 }
-// console.log(authorBornIn1947());
+// const {author: {name}} = authorBornIn1947();
+// console.log(name);
 
 // 2 - Retorne o nome do livro de menor nome.
 // Dica: use a função forEach .
 function smallerName() {
-    let nameBook;
-    let tamanhoLivro = 100;
     // escreva aqui o seu código
-    books.forEach((book, index,array) => {
-        if(book.name.length < tamanhoLivro){
-            tamanhoLivro = book.name.length;
-            nameBook = book.name; 
-        }
-    })
+    return books.reduce((acc, {name}) => acc.length > name.length ? acc : name, books[0].name)
     // Variável nameBook que receberá o valor do menor nome;
-    return nameBook;
   }
-//   console.log(smallerName());
+  // console.log(smallerName());
 
 //   3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
-const expectedResult = {
-    author: {
-      birthYear: 1948,
-      name: 'George R. R. Martin',
-    },
-    genre: 'Fantasia',
-    id: 1,
-    name: 'As Crônicas de Gelo e Fogo',
-    releaseYear: 1991,
-  };
+// const expectedResult = {
+//     author: {
+//       birthYear: 1948,
+//       name: 'George R. R. Martin',
+//     },
+//     genre: 'Fantasia',
+//     id: 1,
+//     name: 'As Crônicas de Gelo e Fogo',
+//     releaseYear: 1991,
+//   };
   
   function getNamedBook() {
     // escreva seu código aqui
-    return books.find((book) => book.name.length === 26)
+    return books.find(({name}) => name.length === 26);
 
   }
-//   console.log(getNamedBook());
+  // console.log(getNamedBook());
+
+  // 4 - Ordene os livros por data de lançamento em ordem decrescente.
 function booksOrderedByReleaseYearDesc() {
     // escreva aqui seu código
-    return books.sort((bookA, bookB) => bookA.releaseYear - bookB.releaseYear)
+    return books.sort(({releaseYear: anoA}, {releaseYear : anoB}) => anoA - anoB)
   }
-//   console.log(booksOrderedByReleaseYearDesc());
+  // console.log(booksOrderedByReleaseYearDesc());
 
 //   5 - Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário.
 
@@ -118,7 +113,7 @@ function booksOrderedByReleaseYearDesc() {
 
 function everyoneWasBornOnSecXX() {
   // escreva seu código aqui
-    return books.every((book) => book.author.birthYear < 2000)
+    return books.every(({author: {birthYear}}) => birthYear <= 2000 && birthYear > 1900)
 }
 
 // console.log(everyoneWasBornOnSecXX());
@@ -129,18 +124,18 @@ function everyoneWasBornOnSecXX() {
 
 function someBookWasReleaseOnThe80s() {
     // escreva seu código aqui
-    return books.some((book) => book.releaseYear > 1980 && book.releaseYear < 1990);
+    return books.some(({releaseYear}) => releaseYear > 1980 && releaseYear <= 1990);
 }
 // console.log(someBookWasReleaseOnThe80s());
 
 // const expectedResult = false;
 
 function authorUnique() {
-  // escreva seu código aqui
-  books.forEach((book, index,array) => {
-    console.log(book.author.birthYear);
-})
+  return books.every((book) =>
+    !books.some((bookSome) =>
+      (bookSome.author.birthYear === book.author.birthYear)
+      && (bookSome.author.name !== book.author.name)));
 }
 
-authorUnique();
+console.log(authorUnique());
 

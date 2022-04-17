@@ -82,24 +82,27 @@ const expectedResult2 = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Fr
 
 function reduceNames() {
   // escreva seu código aqui
-  return books.reduce((acc, curr) => `${acc}, ${curr.author.name}`,books[0].author.name)
-}
-// console.log(reduceNames());
+  return books.reduce((acc, curr) => {
+   if(curr === books[books.length -1 ]) return `${acc}, ${curr.author.name}.`
+   return `${acc}, ${curr.author.name}`;
+})
 
-// 5 - Dada o array de nomes, retorne a quantidade de vezes em que aparecem a letra a maiúscula ou minúscula.
+console.log(reduceNames());
 
-const names = [
-    'Aanemarie', 'Adervandes', 'Akifusa',
-    'Abegildo', 'Adicellia', 'Aladonata',
-    'Abeladerco', 'Adieidy', 'Alarucha',
-  ];
+// // 5 - Dada o array de nomes, retorne a quantidade de vezes em que aparecem a letra a maiúscula ou minúscula.
+
+// const names = [
+//     'Aanemarie', 'Adervandes', 'Akifusa',
+//     'Abegildo', 'Adicellia', 'Aladonata',
+//     'Abeladerco', 'Adieidy', 'Alarucha',
+//   ];
   
-  function containsA() {
-  // escreva seu código aqui
-    return names.map(( name) => 
-         name.toLowerCase().split('').reduce((result, letra) => {
-            if(letra === 'a') return result + 1;
-            return result;
-        }, 0),0);
-}
-console.log(containsA());
+//   function containsA() {
+//   // escreva seu código aqui
+//     return names.map(( name) => 
+//          name.toLowerCase().split('').reduce((result, letra) => {
+//             if(letra === 'a') return result + 1;
+//             return result;
+//         }, 0),0);
+// }
+// console.log(containsA());

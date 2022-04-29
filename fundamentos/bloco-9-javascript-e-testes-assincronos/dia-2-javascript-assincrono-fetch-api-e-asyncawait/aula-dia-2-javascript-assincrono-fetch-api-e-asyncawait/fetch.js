@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
-const fetchJoke = async () => {
-  const url = 'https://api.chucknorris.io/jokes/random?category=dev';
+const fetchJoke = () => {
+  const url = 'api.chucknorris.io/jokes/random?category=dev';
 
   fetch(url)
     .then((response) => response.json())
@@ -11,4 +11,5 @@ const fetchJoke = async () => {
 
 fetchJoke();
 
-// Chuck Norris can write multi-threaded applications with a single thread.
+// Algo deu errado :(
+// TypeError: Only absolute URLs are supported

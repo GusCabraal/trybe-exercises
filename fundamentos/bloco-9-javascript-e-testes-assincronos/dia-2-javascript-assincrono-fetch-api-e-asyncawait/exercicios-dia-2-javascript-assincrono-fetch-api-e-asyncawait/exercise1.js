@@ -2,7 +2,6 @@
 const API_URL = 'https://icanhazdadjoke.com/';
 
 function append(data) {
-  
     const h2 = document.getElementById('jokeContainer')
     h2.innerText = data;
   }

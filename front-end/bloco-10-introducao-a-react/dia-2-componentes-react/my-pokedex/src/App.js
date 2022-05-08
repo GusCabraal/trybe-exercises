@@ -7,11 +7,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>Pokedex</h1>
-        <div className = 'cardlist'>
-          {pokemons.map((item) => (
-            <Pokedex key={item.id} pokemon={item} />
-          ))}
-        </div>
+            <Pokedex pokemons={pokemons} />
       </div>
     );
   }

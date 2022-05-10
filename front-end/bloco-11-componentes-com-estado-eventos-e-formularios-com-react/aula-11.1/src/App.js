@@ -20,6 +20,8 @@ class App extends React.Component {
     this.setState((estadoAnterior, _props) => ({
       numeroDeCliques1: estadoAnterior.numeroDeCliques1 + 1
     }))
+    if (this.state.numeroDeCliques1 % 2 ===0){
+    } 
   }
   handleButtonTwo = () => {
     this.setState((estadoAnterior, _props) => ({

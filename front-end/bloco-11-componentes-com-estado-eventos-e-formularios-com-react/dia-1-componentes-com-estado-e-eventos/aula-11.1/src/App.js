@@ -1,5 +1,5 @@
 // src/App.js
-import React from 'react';
+import React from "react";
 
 class App extends React.Component {
   constructor() {
@@ -7,41 +7,51 @@ class App extends React.Component {
 
     this.handleButtonOne = this.handleButtonOne.bind(this);
     this.state = {
-      numeroDeCliques1: 0,
-      numeroDeCliques2: 0,
-      numeroDeCliques3: 0,
-
-    }
+      clicksBtnOne: 0,
+      clicksBtnTwo: 0,
+      clicksBtnThree: 0,
+    };
     this.handleButtonTwo = this.handleButtonTwo.bind(this);
     this.handleButtonThree = this.handleButtonThree.bind(this);
   }
 
   handleButtonOne = () => {
-    this.setState((estadoAnterior, _props) => ({
-      numeroDeCliques1: estadoAnterior.numeroDeCliques1 + 1
-    }))
-    if (this.state.numeroDeCliques1 % 2 ===0){
-      this.setState((estadoAnterior, _props) => ({
-        numeroDeCliques1: estadoAnterior.numeroDeCliques1 + 1
-      }))
-    } 
-  }
+    this.setState((prevState, _props) => ({
+      clicksBtnOne: prevState.clicksBtnOne + 1,
+    }));
+  };
   handleButtonTwo = () => {
-    this.setState((estadoAnterior, _props) => ({
-      numeroDeCliques2: estadoAnterior.numeroDeCliques2 + 1
-    }))
-  }
+    this.setState((prevState, _props) => ({
+      clicksBtnTwo: prevState.clicksBtnTwo + 1,
+    }));
+  };
   handleButtonThree = () => {
-    this.setState((estadoAnterior, _props) => ({
-      numeroDeCliques3: estadoAnterior.numeroDeCliques3 + 1
-    }))
+    this.setState((prevState, _props) => ({
+      clicksBtnThree: prevState.clicksBtnThree + 1,
+    }));
+  };
+  
+  changeColor = (element) => {
+    if(element % 2 === 0 && element !== 0){
+      return 'green'
+    }
   }
-    render() {
+  render() {
+    const { clicksBtnOne, clicksBtnTwo, clicksBtnThree } = this.state;
     return (
       <div>
-            <button onClick={ this.handleButtonOne }>{this.state.numeroDeCliques1}</button>
-            <button onClick={ this.handleButtonTwo }>{this.state.numeroDeCliques2}</button>
-            <button onClick={ this.handleButtonThree }>{this.state.numeroDeCliques3}</button>
+        <button onClick={this.handleButtonOne}
+          style={{ backgroundColor: this.changeColor(clicksBtnOne)}}>
+          Button one - {this.state.clicksBtnOne}
+        </button>
+        <button onClick={this.handleButtonTwo}
+          style={{ backgroundColor: this.changeColor(clicksBtnTwo)}}>
+        Button two - {this.state.clicksBtnTwo}
+        </button>
+        <button onClick={this.handleButtonThree}
+          style={{ backgroundColor: this.changeColor(clicksBtnThree)}}>
+        Button three - {this.state.clicksBtnThree}
+        </button>
       </div>
     );
   }

@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       numeroDeCliques1: 0,
       numeroDeCliques2: 0,
-      numeroDeCliques3: 0
+      numeroDeCliques3: 0,
 
     }
     this.handleButtonTwo = this.handleButtonTwo.bind(this);
@@ -21,6 +21,9 @@ class App extends React.Component {
       numeroDeCliques1: estadoAnterior.numeroDeCliques1 + 1
     }))
     if (this.state.numeroDeCliques1 % 2 ===0){
+      this.setState((estadoAnterior, _props) => ({
+        numeroDeCliques1: estadoAnterior.numeroDeCliques1 + 1
+      }))
     } 
   }
   handleButtonTwo = () => {

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PersonalFieldset from "./components/PersonalFieldset";
+import DataFieldset from "./components/DataFieldset";
 import "./Form.css";
 
 class Form extends Component {
@@ -25,7 +27,7 @@ class Form extends Component {
   }
 
   render() {
-    const { nome, email, age, anecdote, agree} = this.state;
+    const { nome, email, age, anecdote, agree } = this.state;
 
     return (
       <div>
@@ -33,56 +35,18 @@ class Form extends Component {
           Estados e React - Tecnologia fantástica ou reagindo a regionalismos?
         </h1>
         <form className="form">
-          <label htmlFor="name">
-            Nome:
-            <input
-              id="name"
-              type="text"
-              name="nome"
-              onChange={this.handleChange}
-              value={nome}
-            />
-          </label>
+          <PersonalFieldset 
+          nome = {nome}
+          email = {email}
+          age ={age}
+          handleChange ={this.handleChange}
+          />
+          
+          <DataFieldset 
+          anecdote={anecdote}
+          handleChange ={this.handleChange}
+          />
 
-          <label htmlFor="email">
-            Email:
-            <input
-              id="email"
-              name="email"
-              type="email"
-              onChange={this.handleChange}
-              value={email}
-            />
-          </label>
-
-          <label htmlFor="age">
-            Idade:
-            <select
-              id="age"
-              name="age"
-              defaultValue=""
-              onChange={this.handleChange}
-              value={age}
-            >
-              <option value="">Selecione</option>
-              <option value="adult">Maior que 18</option>
-              <option value="underage">Menor que 18</option>
-            </select>
-          </label>
-
-          <label htmlFor="anecdote">
-            Anedota:
-            <textarea
-              id="anecdote"
-              name="anecdote"
-              onChange={this.handleChange}
-              value={anecdote}
-            />
-          </label>
-          <label>
-            Adicione os arquivos extras
-            <input type="file" />
-          </label>
           <label>
             Concordo com os termos
             <input

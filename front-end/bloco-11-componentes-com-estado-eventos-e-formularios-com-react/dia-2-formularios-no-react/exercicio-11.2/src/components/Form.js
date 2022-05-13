@@ -20,6 +20,13 @@ class Form extends Component {
       [name]: value,
     });
   };
+  onBlurHandler = event => {
+    let { name, value } = event.target;
+
+    if (name === 'city') value = value.match(/^\d/) ? '' : value;
+
+    this.updateState(name, value);
+  }
   render() {
     const { nome, email, cpf, address, city, state, addressType } = this.state;
     return (

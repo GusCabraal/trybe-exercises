@@ -21,7 +21,7 @@ class Form extends Component {
     });
   };
   render() {
-    const { nome, email, cpf, address, city, state, houseType } = this.state;
+    const { nome, email, cpf, address, city, state, addressType } = this.state;
     return (
       <div>
           <h1>
@@ -35,7 +35,7 @@ class Form extends Component {
             address={address}
             city={city}
             state={state}
-            houseType={houseType}
+            houseType={addressType}
             handleChange={this.handleChange}
           />
         </form>

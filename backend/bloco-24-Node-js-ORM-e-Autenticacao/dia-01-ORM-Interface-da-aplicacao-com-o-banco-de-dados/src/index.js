@@ -2,12 +2,13 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const book = require('./controllers/book.controller');
+const book = require('./controllers/BooksController');
 
 
 app.use(express.json());
 
-app.get('/book', book.getAll);
+// app.get('/book', book.getAll);
+app.get('/book', book.getByAuthor);
 app.get('/book/:id', book.getById);
 app.post('/book', book.create);
 app.put('/book/:id', book.update);

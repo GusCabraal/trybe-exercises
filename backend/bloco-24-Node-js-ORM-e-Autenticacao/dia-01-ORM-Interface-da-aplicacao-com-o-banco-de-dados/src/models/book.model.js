@@ -1,5 +1,5 @@
-const UserModel = (sequelize, DataTypes) => {
-    const Book = sequelize.define('Book', {
+const BookModel = (sequelize, DataTypes) => {
+    const BookTable = sequelize.define('Book', {
       title: DataTypes.STRING,
       author: DataTypes.STRING,
       pageQuantity: DataTypes.INTEGER,
@@ -7,7 +7,7 @@ const UserModel = (sequelize, DataTypes) => {
       updatedAt: DataTypes.DATE,
     });
   
-    return Book;
+    return BookTable;
   };
   
-  module.exports = UserModel;
+  module.exports = BookModel;

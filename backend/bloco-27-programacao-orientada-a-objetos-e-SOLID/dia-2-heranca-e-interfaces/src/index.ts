@@ -1,6 +1,7 @@
 // Para testar!
 
 import Student from './Student';
+import Subject from './Subject';
 
 const carolina = new Student('Carolina da Silva', new Date('2005/03/17'));
 const lucas = new Student('Lucas Peixoto Salgueiro', new Date('2006/07/19'));
@@ -13,10 +14,18 @@ lucas.examsGrades = [25, 20, 25, 23];
 jessica.tasksGrades = [50, 45];
 tamires.tasksGrades = [47, 42];
 
-console.log(carolina);
-console.log(lucas);
-console.log(jessica);
-console.log(tamires);
-console.log(fernando);
+// console.log(carolina);
+// console.log(lucas);
+// console.log(jessica);
+// console.log(tamires);
+// console.log(fernando);
 
-// deve retornar erro
+const matematica = new Subject('matematica');
+const historia = new Subject('historia');
+const filosofia = new Subject('filosofia');
+
+console.log(matematica);
+console.log(historia);
+console.log(filosofia);
+
+

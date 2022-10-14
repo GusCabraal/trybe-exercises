@@ -1,6 +1,7 @@
+import Enrollable from "./Enrollable";
 import Person from "./Person";
 
-export default class Student extends Person {
+export default class Student extends Person implements Enrollable {
     private _enrollment: string;
     private _examsGrades: number[];
     private _tasksGrades: number[];
@@ -21,6 +22,7 @@ export default class Student extends Person {
     }
 
     set enrollment(value: string) {
+        if (value.length < 16 ) return;
         this._enrollment = value;
     }
 
@@ -48,15 +50,15 @@ export default class Student extends Person {
         }
     }
 
-    totalGrade(): number {
+    sumGrades(): number {
         const total = [...this._examsGrades, ...this._tasksGrades]
             .reduce((acc, curr) => acc + curr, 0);
 
         return total;
 
     }
-    averageGrade(): number {
-        const avgGrade = this.totalGrade() / [...this._examsGrades, ...this._tasksGrades].length;
+    sumAverageGrade(): number {
+        const avgGrade = this.sumGrades() / [...this._examsGrades, ...this._tasksGrades].length;
         return avgGrade;
     }
 

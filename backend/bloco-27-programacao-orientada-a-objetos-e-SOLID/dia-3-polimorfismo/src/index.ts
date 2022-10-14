@@ -8,5 +8,5 @@ console.log(carolina);
 
 
 const math = new Subject('Matemática');
-const marta = new Teacher('Marta da Silva', new Date('1980/03/30'), math, 2000);
+const marta = new Teacher('Marta da Silva', new Date('1980/03/30'), 2000, math);
 console.log(marta);

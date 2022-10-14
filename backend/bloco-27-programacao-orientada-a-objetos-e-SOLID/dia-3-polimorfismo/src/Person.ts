@@ -26,8 +26,8 @@ export default abstract class Person {
     }
 
     static getAge(value: Date): number {
-        const diff = Math.abs(new Date().getTime() - value.getTime()); // diferença em milissegundos entre a data atual e a data passada por parâmetro
-        const yearMs = 31_536_000_000; // 1 ano = 31536000000 milissegundos
+        const diff = Math.abs(new Date().getTime() - value.getTime());
+        const yearMs = 31_536_000_000;
         return Math.floor(diff / yearMs);
     }
 

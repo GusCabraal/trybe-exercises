@@ -1,0 +1,12 @@
+// 🚀 Utilizando o operador $regex,
+// retorne todos os filmes em que a descrição termine com a palavra
+// "humanity.".
+
+use("cinema");
+db.movies.find()
+
+
+use("cinema");
+db.movies.find({
+  description: { $regex: /humanity.$/i }
+})

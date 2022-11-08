@@ -1,0 +1,14 @@
+// Exercício 14: Remova o campo class dos documentos que possuem
+// esse campo com o valor unknown.
+
+use('class2')
+db.xmen.find()
+
+use('class2')
+db.xmen.updateMany(
+  { class: "unknown" },
+  { 
+    $unset: {class: ""},
+    $currentDate: { lastUpdated:  { $type: "timestamp" }},
+  }
+);

@@ -1,0 +1,14 @@
+// Exercício 18: Decremente em 100 o poder dos mutantes que não
+// possuem a propriedade class.
+
+use('class2')
+db.xmen.find()
+
+use('class2')
+db.xmen.updateMany(
+  { class: { $exists: false } },
+  { 
+    $inc: { power: -100},
+    $currentDate: { lastUpdated:  { $type: "timestamp" }},
+  }
+);

@@ -1,0 +1,19 @@
+// Exercício 15: Produza uma query que renomeie os campos de name
+// para hero_name, e de true_name para full_name; adicione o campo
+// power com valor 100, em todos os documentos.
+
+// Caso você não tenha conseguido fazer esse exercício,
+// reforce seus estudos sobre o conteúdo do dia.
+
+use('class2')
+db.xmen.find()
+
+use('class2')
+db.xmen.updateMany(
+  {},
+  { 
+    $rename: {"name": "hero_name", "true_name": "full_name"},
+    $set: { power: 100},
+    $currentDate: { lastUpdated:  { $type: "timestamp" }},
+  }
+);

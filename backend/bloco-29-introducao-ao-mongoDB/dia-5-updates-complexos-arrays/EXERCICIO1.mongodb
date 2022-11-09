@@ -1,0 +1,18 @@
+// 🚀 Exercício 1: Adicione a categoria "superhero" ao filme Batman.
+
+// Após a execução do método .find().pretty(), o resultado do filme Batman
+// será parecido com o dessa imagem:
+
+use('cinema')
+db.movies.find()
+
+
+use('cinema')
+db.movies.updateOne(
+  { title: "Batman" },
+  {
+    $push: {
+      category: "superhero"
+    }
+  }
+)

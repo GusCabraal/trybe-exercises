@@ -1,0 +1,1 @@
+Exercicios do modulo de ciencia da computação do curso da trybe.
